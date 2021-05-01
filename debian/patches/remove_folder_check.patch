@@ -1,0 +1,54 @@
+
+--- a/lib-core.sh
++++ b/lib-core.sh
+@@ -149,7 +149,7 @@
+ ###############################################################################
+ 
+ start_animation() {
+-  setterm -cursor off
++  #setterm -cursor off
+ 
+   (
+     while true; do
+@@ -170,7 +170,7 @@
+ 
+ stop_animation() {
+   kill -13 "${ANIM_PID}" &> /dev/null
+-  setterm -cursor on
++  #setterm -cursor on
+ }
+ 
+ # Echo like ... with flag type and display message colors
+@@ -293,21 +293,13 @@
+ 
+     case "${global_param}" in
+       -d)
+-        if [[ "$(readlink -m "${value}")" =~ "${REPO_DIR}" ]]; then
+-          prompt -e "'${display_param}' ERROR: Can't install in the source directory."
+-          has_any_error="true"
+-        elif [[ ! -w "${value}" && ! -w "$(dirname "${value}")" ]]; then
+-          prompt -e "'${display_param}' ERROR: You have no permission to access that directory."
+-          has_any_error="true"
+-        else
+-          if [[ ! -d "${value}" ]]; then
++        if [[ ! -d "${value}" ]]; then
+             prompt -w "Destination directory does not exist. Let's make a new one..."; echo
+             mkdir -p "${value}"
+-          fi
+-
+-          dest="${value}"
+         fi
+ 
++        dest="${value}"
++
+         remind_relative_path "${display_param}" "${value}"; variant_found="skip" ;;
+       -b)
+         if [[ "${value}" == "blank" || "${value}" == "default" ]]; then
+--- a/install.sh
++++ b/install.sh
+@@ -132,4 +132,5 @@
+   echo; prompt -s "Done!"; echo; prompt -w "${msg}"; echo
+ 
+   [[ -x /usr/bin/notify-send ]] && notify-send "'${name}' theme has been installed. Enjoy!" "${msg}" -i "dialog-information-symbolic"
++  exit 0
+ fi

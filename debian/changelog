@@ -1,0 +1,23 @@
+whitesur-gtk-theme (20210420-0ubuntu1~focal) focal; urgency=medium
+
+  * New upstream release
+
+ -- David Mohammed <fossfreedom@ubuntu.com>  Fri, 30 Apr 2021 23:40:29 +0100
+
+whitesur-gtk-theme (20210408-0ubuntu1~hirsute) hirsute; urgency=medium
+
+  * New upstream release
+
+ -- David Mohammed <fossfreedom@ubuntu.com>  Thu, 08 Apr 2021 10:46:30 +0100
+
+whitesur-gtk-theme (20210308-0ubuntu1~hirsute) hirsute; urgency=medium
+
+  * New upstream release
+
+ -- David Mohammed <fossfreedom@ubuntu.com>  Fri, 12 Mar 2021 16:10:01 +0000
+
+whitesur-gtk-theme (20210115-0ubuntu1~hirsute) hirsute; urgency=medium
+
+  * initial release
+
+ -- David Mohammed <fossfreedom@ubuntu.com>  Sun, 31 Jan 2021 19:33:21 +0000

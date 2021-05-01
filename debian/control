@@ -1,0 +1,27 @@
+Source: whitesur-gtk-theme
+Section: x11
+Priority: optional
+Maintainer: David Mohammed <fossfreedom@ubuntu.com>
+Build-Depends: debhelper (>= 12),
+ debhelper-compat (= 12),
+ sassc,
+ libglib2.0-dev,
+ libcanberra-gtk-module,
+ libxml2-utils,
+ gtk2-engines-murrine,
+ nautilus
+Standards-Version: 4.5.0
+Homepage: https://github.com/vinceliuice/whitesur-gtk-theme
+Vcs-Git: https://github.com/UbuntuBudgie/whitesur-gtk-theme -b debian
+Vcs-Browser: https://github.com/UbuntuBudgie/whitesur-gtk-theme/tree/debian
+
+Package: whitesur-gtk-theme
+Architecture: all
+Section: misc
+Depends: gtk2-engines-murrine,
+ gtk2-engines-pixbuf,
+ ${misc:Depends}
+Description: MacOS Big Sur like theme
+ WhiteSur is a MacOS Big Sur like theme for GTK 3, GTK 2 and Gnome-Shell which
+ supports GTK 3 and GTK 2 based desktop environments like Gnome, Pantheon,
+ XFCE, Mate, etc.
