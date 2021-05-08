@@ -8,8 +8,7 @@ Build-Depends: debhelper (>= 12),
  libglib2.0-dev,
  libcanberra-gtk-module,
  libxml2-utils,
- gtk2-engines-murrine,
- nautilus
+ gtk2-engines-murrine
 Standards-Version: 4.5.0
 Homepage: https://github.com/vinceliuice/whitesur-gtk-theme
 Vcs-Git: https://github.com/UbuntuBudgie/whitesur-gtk-theme -b debian
