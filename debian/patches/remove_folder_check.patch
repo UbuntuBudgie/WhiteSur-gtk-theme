@@ -1,6 +1,25 @@
 --- a/lib-core.sh
 +++ b/lib-core.sh
-@@ -290,20 +290,20 @@
+@@ -43,7 +43,8 @@
+   SED_OPT="-i"
+ fi
+ 
+-SUDO_BIN="$(which sudo)"
++#SUDO_BIN="$(which sudo)"
++SUDO_BIN=""
+ 
+ #------------Directories--------------#
+ THEME_SRC_DIR="${REPO_DIR}/src"
+@@ -223,7 +224,7 @@
+ fi
+ 
+ rm -rf "${WHITESUR_TMP_DIR}"
+-mkdir -p "${WHITESUR_TMP_DIR}"; exec 2> "${WHITESUR_TMP_DIR}/error_log.txt"
++mkdir -p "${WHITESUR_TMP_DIR}"; #exec 2> "${WHITESUR_TMP_DIR}/error_log.txt"
+ 
+ signal_exit() {
+   rm -rf "${WHITESUR_TMP_DIR}"
+@@ -467,20 +468,20 @@
  
      case "${global_param}" in
        -d)
@@ -29,11 +48,22 @@
  
          remind_relative_path "${display_param}" "${value}"; variant_found="skip" ;;
        -b)
+@@ -683,7 +684,7 @@
+ full_sudo() {
+   if [[ ! -w "/root" ]]; then
+     prompt -e "ERROR: '${1}' needs a root priviledge. Please run this '${0}' as root"
+-    has_any_error="true"
++    #has_any_error="true"
+   fi
+ }
+ 
 --- a/install.sh
 +++ b/install.sh
-@@ -144,4 +144,5 @@
-   echo; prompt -w "${final_msg}"; echo
+@@ -163,6 +163,7 @@
  
+   echo; prompt -w "${final_msg}"
    [[ -x /usr/bin/notify-send ]] && notify-send "'${name}' theme has been installed. Enjoy!" "${notif_msg}" -i "dialog-information-symbolic"
 +  exit 0
  fi
+ 
+ echo
